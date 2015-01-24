@@ -4,23 +4,27 @@ Docker files to generate a Hive CLI to Hadoop cluster. The output is
 a docker image, which can be posted to Docker Hub. It can be configured 
 to run using one of two configurations: memex or darpa 
 
+## Instructions to Build Your Own Hadoop CLI 
 
-Instructions
-============
-Run in directory with Dockerfile to create new image
+Run in directory containing Dockerfile to create new Docker image. Change the 
+parker20121/docker-hive-cli tag to fit your own Docker profile.
 
-	sudo docker build --rm=true -t="parker20121/xdata-hive:v1" .
+	sudo docker build --rm=true -t="parker20121/docker-hive-cli:v1" .
 
-Create and run new container from new v1 image
+Once completed, run the new container from new parker20121/docker-hive-cli image
 
-	sudo docker run -t -i parker20121/xdata-hive:v1 /bin/bash
+	sudo docker run -t -i parker20121/docker-hive-cli:v1 /bin/bash
 
-To copy the data from a data volume to the host, mount the volume 
-from another container and use the cp command to copy the data to the host
+Once the image has started, copy the configuration files by running the copy-files.sh
+script contained in the /tmp/config directory.
 
-	sudo docker run --rm -v [path to config files]:/host:rw parker20121/xdata-hive:v1 /
-        --volumes-from dvc1 cp -r /var/www/html /host/dvc1_files
+	/tmp/config/copy-files.sh [CONFIGURATION]
 
-	sudo docker run --rm -v [path to config files]:/host:rw parker20121/xdata-hive:v1 /
-        --volumes-from dvc1 cp -r /var/www/html /host/dvc1_files
+where configuration is currently one of the following choices:
+
+	memex - DARPA MEMEX Hadoop cluster configuration
+	
+	xdata - DARPA XDATA Hadoop cluster configuration
+
+        [custom] - A subdirectory that contains your own Hadoop/Hive configuration files.
 
