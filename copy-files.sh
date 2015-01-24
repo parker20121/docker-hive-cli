@@ -4,7 +4,7 @@ CONFIG=$1
 
 if [ $CONFIG != "memex" ] or [ $CONFIG != "xdata" ]
   then
-    echo "Please chose configuration"
+    echo "Please choose configuration"
     echo "usage: ./copy-config.sh [memex|xdata]
     exit 0 
 fi
