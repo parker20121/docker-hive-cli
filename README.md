@@ -11,14 +11,16 @@ parker20121/docker-hive-cli tag to fit your own Docker profile.
 
 	sudo docker build --rm=true -t="parker20121/docker-hive-cli:v1" .
 
-Once completed, run the new container from new parker20121/docker-hive-cli image
+Once completed, run the new container from new parker20121/docker-hive-cli image.
+Also link the host local directory, /home/docker/docker-hive-cli, to the 
+container's directory, /tmp/config.
 
-	sudo docker run -t -i parker20121/docker-hive-cli:v1 /bin/bash
+	sudo docker run -v /home/docker/docker-hive-cli:/tmp/config -t -i parker20121/docker-hive-cli:v1 /bin/bash
 
 Once the image has started, copy the configuration files by running the copy-files.sh
 script contained in the /tmp/config directory.
 
-	/tmp/config/copy-files.sh [CONFIGURATION]
+	./copy-files.sh [CONFIGURATION]
 
 where configuration is currently one of the following choices:
 
@@ -26,5 +28,5 @@ where configuration is currently one of the following choices:
 	
 	xdata - DARPA XDATA Hadoop cluster configuration
 
-        [custom] - A subdirectory that contains your own Hadoop/Hive configuration files.
+	[custom] - A subdirectory that contains your own Hadoop/Hive configuration files.
 
