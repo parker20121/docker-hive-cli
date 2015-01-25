@@ -4,7 +4,7 @@ Docker files to generate a Hive CLI to Hadoop cluster. The output is
 a docker image, which can be posted to Docker Hub. It can be configured 
 to run using one of two configurations: memex or darpa 
 
-## Building the Hadoop/Hive CLI 
+## Building the Hadoop/Hive CLI Docker Image 
 
 Run in directory containing Dockerfile to create new Docker image. Change the 
 parker20121/docker-hive-cli tag to fit your own Docker profile.
