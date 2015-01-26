@@ -18,7 +18,7 @@ container's directory, /tmp/config.
 	sudo docker run -v /home/docker/docker-hive-cli:/tmp/config -t -i parker20121/docker-hive-cli:v1 /bin/bash
 
 Once the image has started, copy the configuration files by running the copy-files.sh
-script contained in the /tmp/config directory.
+script contained in the /tmp/config directory. From /tmp/config run:
 
 	./copy-files.sh [CONFIGURATION]
 
