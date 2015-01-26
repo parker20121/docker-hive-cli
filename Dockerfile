@@ -18,8 +18,3 @@ ENV HADOOP_HOME=/usr/lib/hadoop
 ENV HIVE_HOME=/usr/lib/hive
 ENV PATH=$PATH:$HADOOP_HOME/bin:$HIVE_HOME/bin
 
-RUN mv /etc/resolv.conf /etc/resolv.conf.old
-RUN echo "search xdata.data-tactics-corp.com" > /etc/resolv.conf
-RUN echo "10.1.90.10" >> /etc/resolv.conf
-RUN echo "8.8.8.8" >> /etc/resolv.conf
-

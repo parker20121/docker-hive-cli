@@ -2,7 +2,7 @@
 
 CONFIG=$1
 
-if [ $CONFIG != "memex" ] or [ $CONFIG != "xdata" ]
+if [ "$CONFIG" != "memex" ] or [ "$CONFIG" != "xdata" ]
   then
     echo "Please choose configuration"
     echo "usage: ./copy-config.sh [memex|xdata]
@@ -19,7 +19,7 @@ cp -f $CONFIG/hive-site.xml /usr/lib/hive/conf/.
 cp /etc/resolv.conf /etc/resolv.conf.old
 cp -f $CONFIG/resolv.conf /etc/resolv.conf
 
-if [ $CONFIG == "memex" ]
+if [ "$CONFIG" == "memex" ]
   then
     cp /etc/hosts /etc/hosts.old
     cp -f $CONFIG/hosts /etc/hosts
