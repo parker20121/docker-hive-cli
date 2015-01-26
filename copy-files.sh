@@ -12,7 +12,6 @@ fi
 
 cp -f $CONFIG/hdfs-site.xml /usr/lib/hadoop/etc/hadoop/.
 cp -f $CONFIG/core-site.xml /usr/lib/hadoop/etc/hadoop/.
-cp -f $CONFIG/hdfs-site.xml /usr/lib/hadoop/etc/hadoop/.
 cp -f $CONFIG/mapred-site.xml /usr/lib/hadoop/etc/hadoop/.
 cp -f $CONFIG/yarn-site.xml /usr/lib/hadoop/etc/hadoop/.
 cp -f $CONFIG/hive-site.xml /usr/lib/hive/conf/.
