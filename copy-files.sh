@@ -15,6 +15,7 @@ cp -f $CONFIG/core-site.xml /usr/lib/hadoop/etc/hadoop/.
 cp -f $CONFIG/mapred-site.xml /usr/lib/hadoop/etc/hadoop/.
 cp -f $CONFIG/yarn-site.xml /usr/lib/hadoop/etc/hadoop/.
 cp -f $CONFIG/hive-site.xml /usr/lib/hive/conf/.
+cp -f $CONFIG/hbase-site.xml /usr/lib/hbase/conf/.
 
 if [ -a "$CONFIG/resolv.conf" ]; then
   cp /etc/resolv.conf /etc/resolv.conf.old
